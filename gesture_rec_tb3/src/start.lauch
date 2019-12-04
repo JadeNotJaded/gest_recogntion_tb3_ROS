@@ -1,4 +1,0 @@
-<launch>
-    <node name="gest_classifier" pkg="gesture_rec_tb3" type="gest_classifier.py" output="screen"/>
-    <node name="instruction" pkg="gesture_rec_tb3" type="instruction.py" output="screen"/>
-</launch>

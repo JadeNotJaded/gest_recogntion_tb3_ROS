@@ -45,3 +45,4 @@ if __name__ == "__main__":
         twist_pub.publish(vel.msg)
     else:
         twist_pub
+    rospy.spin()

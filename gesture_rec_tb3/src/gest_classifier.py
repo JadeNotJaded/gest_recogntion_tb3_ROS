@@ -7,12 +7,11 @@ import cv2, time
 from keras.models import load_model
 import numpy as np
 import os
-from PIL import Image
-import glob
 import rospy
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import LaserScan
 from std_msgs.msg import String
+import freenect
 
 #global variables
 X_test = []  #used to store images
