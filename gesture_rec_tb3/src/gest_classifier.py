@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 import cv2, time
-# Import of keras model and hidden layers for our convolutional network
-# from keras.models import Sequential
-# from keras.layers.convolutional import Conv2D, MaxPooling2D
-# from keras.layers import Dense, Flatten
 from keras.models import load_model
 import numpy as np
 import os
