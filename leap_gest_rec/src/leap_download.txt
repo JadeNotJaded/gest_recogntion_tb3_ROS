@@ -1,0 +1,21 @@
+Getting leap motion to work on your computer:
+1. First, download the SDK from https://www.leapmotion.com/setup/linux. Then, extract this package. You should will  two DEB files that can be installed on Ubuntu.
+2. Open Terminal on the extracted location and install the DEB file using the following command (for 64-bit PCs):         
+ 	$ sudo dpkg -install Leap-*-x64.deb
+    *** If you are installing it on a 32-bit PC, you should use the following command:         
+	$ sudo dpkg -install Leap-*-x86.deb
+3. Plug in leap motion and type dmesg in terminal to see if it is detected
+4. clone ROS drivers:   $ git clone https://github.com/ros-drivers/leap_motion
+5. edit .bashrc:
+export LEAP_SDK=$LEAP_SDK:$HOME/LeapSDK
+export PYTHONPATH=$PYTHONPATH:$HOME/LeapSDK/lib:$HOME/LeapSDK/lib/x64
+
+6. save bashrc and restart terminal then run:
+sudo cp $LeapSDK/lib/x64/libLeap.so /usr/local/lib (or maybe x86 if you're using 32 bit??)
+sudo ldconfig
+catkin_make install --pkg leap_motion
+
+7. to test run:
+ sudo leapd
+ roslaunch leap_motion sensor_sender.launch
+ rostopic list

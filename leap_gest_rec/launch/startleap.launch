@@ -1,0 +1,5 @@
+<launch> 
+<!-- <node name="leapd" type="leapd.sh" pkg="leap_gest_rec"> </node> -->
+    <include file="$(find leap_motion)/launch/sensor_sender.launch"/>
+    <node name="leap_sub" pkg="leap_gest_rec" type="leap_sub.py" output="screen"/>
+</launch>
